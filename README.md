@@ -104,3 +104,12 @@ hw.gpu.mode = auto
 ```bash
 emulator -avd nexus5
 ```
+<br>
+
+#### References:
+https://medium.com/michael-wallace/how-to-install-android-sdk-and-setup-avd-emulator-without-android-studio-aeb55c014264
+
+https://gist.github.com/mrk-han/66ac1a724456cadf1c93f4218c6060ae
+
+https://stackoverflow.com/questions/11235370/android-emulator-doesnt-take-keyboard-input-sdk-tools-rev-20
+
