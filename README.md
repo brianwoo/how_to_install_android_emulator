@@ -102,7 +102,7 @@ hw.gpu.mode = auto
 
 ## Run the emulator
 ```bash
-emulator -avd nexus5
+emulator -avd nexus5 -partition-size 16384
 ```
 <br>
 
