@@ -108,7 +108,15 @@ emulator -avd nexus5 -partition-size 16384
 
 
 ## Rooting (Without Google Play) & Installing BurpSuite Certificate
+
+[Guide](https://book.hacktricks.xyz/mobile-pentesting/android-app-pentesting/install-burp-certificate)
+
 e.g. system-images;android-33;google_apis;x86_64
+Start emulator with "Writable System"
+```bash
+emulator -avd "rooted" -writable-system
+```
+
 ```bash
 openssl x509 -inform DER -in burp_cacert.der -out burp_cacert.pem
 CERTHASHNAME="`openssl x509 -inform PEM -subject_hash_old -in burp_cacert.pem | head -1`.0"
@@ -120,6 +128,13 @@ adb shell chmod 644 /system/etc/security/cacerts/$CERTHASHNAME #Assign privilege
 adb reboot #Now, reboot the machine
 ```
 
+## Rooting (with Google Play) & Installing BurpSuite Certificate
+
+- Requires RootAVD / Magisk
+- [RootAVD GitLab](https://gitlab.com/newbit/rootAVD)
+ - RootAVD tested with Android 33 with Playstore
+- [Guide](https://book.hacktricks.xyz/mobile-pentesting/android-app-pentesting/install-burp-certificate)
+- [Video](https://www.youtube.com/watch?v=qQicUW0svB8)
 
 
 
