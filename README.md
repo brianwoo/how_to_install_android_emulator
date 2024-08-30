@@ -106,6 +106,23 @@ emulator -avd nexus5 -partition-size 16384
 ```
 <br>
 
+
+## Rooting (Without Google Play) & Installing BurpSuite Certificate
+e.g. system-images;android-33;google_apis;x86_64
+```bash
+openssl x509 -inform DER -in burp_cacert.der -out burp_cacert.pem
+CERTHASHNAME="`openssl x509 -inform PEM -subject_hash_old -in burp_cacert.pem | head -1`.0"
+mv burp_cacert.pem $CERTHASHNAME #Correct name
+adb root && sleep 2 && adb remount #Allow to write on /syste
+adb push $CERTHASHNAME /sdcard/ #Upload certificate
+adb shell mv /sdcard/$CERTHASHNAME /system/etc/security/cacerts/ #Move to correct location
+adb shell chmod 644 /system/etc/security/cacerts/$CERTHASHNAME #Assign privileges
+adb reboot #Now, reboot the machine
+```
+
+
+
+
 #### References:
 https://medium.com/michael-wallace/how-to-install-android-sdk-and-setup-avd-emulator-without-android-studio-aeb55c014264
 
