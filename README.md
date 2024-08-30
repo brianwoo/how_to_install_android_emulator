@@ -132,7 +132,8 @@ adb reboot #Now, reboot the machine
 
 - Requires RootAVD / Magisk
 - [RootAVD GitLab](https://gitlab.com/newbit/rootAVD)
- - RootAVD tested with Android 33 with Playstore
+  - RootAVD tested with Android 33 with Playstore
+  - ./rootAVD.sh /opt/android/sdk/system-images/android-33/google_apis_playstore/x86_64/ramdisk.img
 - [Guide](https://book.hacktricks.xyz/mobile-pentesting/android-app-pentesting/install-burp-certificate)
 - [Video](https://www.youtube.com/watch?v=qQicUW0svB8)
 
